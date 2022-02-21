@@ -16,9 +16,17 @@
 
 <!-- Put site-specific property overrides in this file. -->
 
-<configuration> 
-    <property> 
-        <name>fs.default.name</name> 
-        <value>hdfs://%HDFS_NAMENODE_HOSTNAME%:8020</value> 
-    </property> 
-</configuration> 
+<configuration>
+  <property> 
+      <name>dfs.namenode.name.dir</name> 
+      <value>%NAMENODE_DIRS%</value> 
+  </property> 
+  <property> 
+      <name>dfs.datanode.data.dir</name> 
+      <value>%DATANODE_DIRS%</value> 
+  </property> 
+  <property> 
+      <name>dfs.replication</name> 
+      <value>1</value> 
+  </property> 
+</configuration>
