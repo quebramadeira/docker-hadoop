@@ -25,6 +25,6 @@ RUN chown hdfs:hadoop /opt/mount1/datanode-dir && chown hdfs:hadoop /opt/mount2/
 RUN mkdir -p /opt/mount1/nodemanager-local-dir && mkdir -p /opt/mount2/nodemanager-local-dir &&  mkdir -p /opt/mount1/nodemanager-log-dir && mkdir -p /opt/mount2/nodemanager-log-dir
 RUN chown yarn:hadoop /opt/mount1/nodemanager-local-dir && chown yarn:hadoop /opt/mount2/nodemanager-local-dir && chown yarn:hadoop /opt/mount1/nodemanager-log-dir && chown yarn:hadoop /opt/mount2/nodemanager-log-dir
 VOLUME /opt/mount1 opt/mount2
-COPY runworker.sh /runworker.sh
+COPY worker/runworker.sh /runworker.sh
 RUN chmod a+x /runworker.sh
 CMD ["/runworker.sh"]
