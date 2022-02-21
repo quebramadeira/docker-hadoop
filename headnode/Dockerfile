@@ -23,6 +23,6 @@ RUN mkdir /opt/hadoop-3.1.2/logs && chown :hadoop /opt/hadoop-3.1.2/logs && setf
 RUN mkdir -p /opt/mount1/namenode-dir && mkdir -p /opt/mount2/namenode-dir
 RUN chown hdfs /opt/mount1/namenode-dir && chown hdfs /opt/mount2/namenode-dir && chown :hadoop /opt/mount1/namenode-dir && chown :hadoop /opt/mount2/namenode-dir
 VOLUME /opt/mount1 opt/mount2
-COPY runheadnode.sh /runheadnode.sh
+COPY headnode/runheadnode.sh /runheadnode.sh
 RUN chmod a+x /runheadnode.sh
 CMD ["/runheadnode.sh"]
