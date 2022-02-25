@@ -22,7 +22,7 @@ Place to the home directory:
   - config folder with all the contents;
   - headnode folder with all the contents;
   - worker folder with all the contents;
-  - hadoop-3.1.2.tar.gz file from https://hadoop.apache.org/release/3.1.2.html
+  - hadoop-3.1.2.tar.gz file from https://archive.apache.org/dist/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz
 
 Create docker images from Dockerfiles:
   - docker build -t headnode:1.0 -f headnode/Dockerfile .
