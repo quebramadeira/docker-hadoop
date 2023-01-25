@@ -1,0 +1,34 @@
+version: '3.8'
+networks:
+  hadoop:
+    external: true
+services:
+  headnode:
+    image: headnode:1.0
+    container_name: headnode
+    restart: always
+    networks:
+        hadoop:
+            ipv4_address: 192.168.10.2
+    ports:
+      - "8088:8088"
+      - "9870:9870"
+    extra_hosts:
+        headnode: 192.168.10.2
+        worker: 192.168.10.3
+    volumes:
+      - ./data:/hadoop/data
+    environment:
+      - "USER=root"
+  worker:
+    image: worker:1.0
+    container_name: worker
+    restart: always
+    networks:
+        hadoop:
+            ipv4_address: 192.168.10.3
+    extra_hosts:
+        headnode: 192.168.10.2
+        worker: 192.168.10.3
+    environment:
+      - "USER=root"
